@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SMS Consent Information for Response Pro automated messaging service.">
+    <title>SMS Consent - Response Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 
+    CLOUDFLARE SECURITY HEADERS CONFIGURATION:
+    
+    Since this site is hosted on GitHub Pages (which doesn't support custom headers),
+    configure these headers in Cloudflare Transform Rules:
+    
+    1. Log into Cloudflare Dashboard
+    2. Go to your domain → Rules → Transform Rules → Modify Response Header
+    3. Create new rule: "Security Headers"
+    4. When incoming requests match: (http.host eq "yourdomain.com")
+    5. Add these headers:
+    
+    Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: DENY
+    Referrer-Policy: no-referrer
+    Permissions-Policy: geolocation=(), microphone=(), camera=()
+    -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav-brand">Response Pro</div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sms-consent.html">SMS Consent</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-page">
+            <div class="container">
+                <h1>SMS Consent Information</h1>
+                
+                <!-- SIMULATED LEAD SUBMISSION FORM START -->
+                <div class="form-container">
+                    <h2 class="form-title">Request Service Information</h2>
+                    <p class="form-description">Complete this form to receive information about our SMS lead response services.</p>
+                    
+                    <form id="leadForm" class="lead-form" novalidate>
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                name="firstName" 
+                                required 
+                                aria-required="true"
+                                autocomplete="given-name"
+                            >
+                            <span class="error-message" id="firstNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName" 
+                                required 
+                                aria-required="true"
+                                autocomplete="family-name"
+                            >
+                            <span class="error-message" id="lastNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                autocomplete="email"
+                            >
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                required 
+                                aria-required="true"
+                                placeholder="(555) 555-5555"
+                                autocomplete="tel"
+                            >
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="consent-section">
+                            <h3>SMS Consent</h3>
+                            
+                            <div class="consent-group">
+                                <label class="consent-label-prominent">
+                                    <input 
+                                        type="checkbox" 
+                                        id="transactionalConsent" 
+                                        name="transactionalConsent"
+                                        class="consent-checkbox"
+                                    >
+                                    <span class="consent-text">
+                                        <strong>I consent to receive transactional SMS</strong><br>
+                                        By checking this box, I agree to receive text messages from Response Pro related to my service request. Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time. Reply HELP for help. View our <a href="/privacy.html" target="_blank">Privacy Policy</a> and <a href="/terms.html" target="_blank">Terms of Service</a>.
+                                    </span>
+                                </label>
+                            </div>
+
+                            <div class="consent-group">
+                                <label class="consent-label">
+                                    <input 
+                                        type="checkbox" 
+                                        id="marketingConsent" 
+                                        name="marketingConsent"
+                                        class="consent-checkbox"
+                                    >
+                                    <span class="consent-text">
+                                        <strong>I consent to receive marketing/promotional SMS (optional)</strong><br>
+                                        I agree to receive marketing and promotional text messages from Response Pro. Message frequency varies. Message and data rates may apply. Reply STOP to opt out. This is optional and not required to use our services.
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">Submit Request</button>
+                    </form>
+
+                    <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+                        <div class="confirmation-icon">✓</div>
+                        <h3>Thank you! Your request has been received.</h3>
+                        <p>We will contact you shortly with information about our services.</p>
+                    </div>
+
+                    <div id="encryptedData" class="encrypted-display" style="display: none;">
+                        <h4>Simulated Encrypted Storage (For Carrier Verification)</h4>
+                        <p class="encrypted-label">Data stored securely using Base64 encoding:</p>
+                        <pre id="encryptedContent"></pre>
+                        <p class="encrypted-note">In production, data would be encrypted using industry-standard encryption (AES-256) and transmitted securely via HTTPS.</p>
+                    </div>
+                </div>
+                <!-- SIMULATED LEAD SUBMISSION FORM END -->
+
+                <article class="policy-content">
+                    <section>
+                        <h2>Consent to Receive Text Messages</h2>
+                        <p>By submitting your phone number through a participating business using our system, you agree to receive transactional text messages related to your service request. Message and data rates may apply. Reply STOP to opt out at any time.</p>
+                    </section>
+
+                    <section>
+                        <h2>What Messages You Will Receive</h2>
+                        <p>The text messages you receive are <strong>transactional in nature</strong> and are sent to confirm your service request, provide updates, or communicate important information related to the specific service you requested from the business you contacted.</p>
+                        <p>These messages are <strong>not marketing messages</strong>. They are operational communications necessary to fulfill the service you requested.</p>
+                    </section>
+
+                    <section>
+                        <h2>Who Sends These Messages</h2>
+                        <p>Messages are sent on behalf of the local service business you contacted. Response Pro provides the automated messaging technology that enables these businesses to respond quickly to customer inquiries.</p>
+                        <p>The content of messages is determined by the business you contacted, and Response Pro acts as the technical service provider facilitating the delivery of these messages.</p>
+                    </section>
+
+                    <section>
+                        <h2>How to Opt Out</h2>
+                        <p>You can opt out of receiving text messages at any time by replying <strong>STOP</strong> to any message you receive. Once you opt out, you will no longer receive text messages from that business through our system.</p>
+                        <p>Please note that opting out may affect the business's ability to communicate with you about your service request.</p>
+                    </section>
+
+                    <section>
+                        <h2>Message Frequency</h2>
+                        <p>The frequency of messages depends on your interaction with the business you contacted. Typically, you will receive:</p>
+                        <ul>
+                            <li>An initial confirmation message when you submit a service request</li>
+                            <li>Follow-up messages as needed to coordinate service delivery</li>
+                            <li>Updates or important information related to your specific request</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Message and Data Rates</h2>
+                        <p>Standard message and data rates from your mobile carrier may apply. Response Pro does not charge for messages, but your mobile carrier may charge you according to your cellular plan.</p>
+                    </section>
+
+                    <section>
+                        <h2>Support</h2>
+                        <p>For help or questions about the messages you receive, please reply HELP to any message or contact us:</p>
+                        <p>Email: <a href="mailto:leadresponsepro@gmail.com">leadresponsepro@gmail.com</a><br>
+                        Phone: <a href="tel:+15403085315">(540) 308-5315</a></p>
+                    </section>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Response Pro. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="sms-consent.html">SMS Consent</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="lead-form.js"></script>
+</body>
+</html>
